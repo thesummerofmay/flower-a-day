@@ -13,65 +13,58 @@
   <div class="page">
 
     <header>
-      <div class="wordmark">Flower a Day</div>
+      <div class="wordmark">&#10022; Flower a Day</div>
+      <nav class="date-nav">
+        <button class="nav-btn" id="btn-prev">&#8249; Previous</button>
+        <div class="date-display">
+          <span class="date-label" id="date-label"></span>
+          <span class="date-sep">&#8212;</span>
+          <span class="date-sub" id="date-sub"></span>
+        </div>
+        <button class="nav-btn" id="btn-next">Next &#8250;</button>
+      </nav>
     </header>
 
-    <nav class="date-nav">
-      <button class="nav-btn" id="btn-prev">&#8249; Previous</button>
-      <div class="date-display">
-        <div class="date-label" id="date-label"></div>
-        <div class="date-sub" id="date-sub"></div>
-      </div>
-      <button class="nav-btn" id="btn-next">Next &#8250;</button>
-    </nav>
+    <main class="main-layout">
 
-    <main class="card" id="card">
-
-      <div class="illustration-wrap">
+      <!-- Left: illustration + identity -->
+      <div class="left-panel">
         <div class="illustration-ring" id="img-ring">
-          <img id="flower-img" src="" alt="" style="display:none" crossorigin="anonymous">
+          <img id="flower-img" src="" alt="" style="display:none">
           <div class="img-placeholder" id="img-placeholder">
             <div class="spinner"></div>
           </div>
         </div>
-        <p class="img-credit" id="img-credit" style="display:none">Illustration via Wikimedia Commons</p>
+        <div class="flower-identity">
+          <h2 class="flower-name" id="flower-name"></h2>
+          <p class="flower-latin" id="flower-latin"></p>
+          <p class="flower-family" id="flower-family"></p>
+        </div>
+        <p class="img-credit" id="img-credit" style="visibility:hidden">Image via Wikipedia</p>
       </div>
 
-      <div class="flower-header">
-        <h2 class="flower-name" id="flower-name"></h2>
-        <p class="flower-latin" id="flower-latin"></p>
-        <p class="flower-family" id="flower-family"></p>
-      </div>
+      <!-- Right: description + tabbed info -->
+      <div class="right-panel">
+        <p class="flower-desc" id="flower-desc"></p>
 
-      <p class="flower-desc" id="flower-desc"></p>
+        <div class="tab-bar">
+          <button class="tab-btn active" data-tab="habitat">Origin &amp; Habitat</button>
+          <button class="tab-btn" data-tab="medical">Medicinal Uses</button>
+          <button class="tab-btn" data-tab="uses">Culinary &amp; Uses</button>
+          <button class="tab-btn" data-tab="facts">Did You Know?</button>
+        </div>
 
-      <div class="info-grid">
-        <div class="info-box">
-          <div class="info-label">Origin &amp; Habitat</div>
-          <p id="flower-habitat"></p>
-        </div>
-        <div class="info-box">
-          <div class="info-label">Medicinal Uses</div>
-          <p id="flower-medical"></p>
-        </div>
-        <div class="info-box">
-          <div class="info-label">Culinary &amp; Other Uses</div>
-          <p id="flower-uses"></p>
-        </div>
-        <div class="info-box info-box--wide">
-          <div class="info-label">Did You Know?</div>
-          <p id="flower-facts"></p>
+        <div class="tab-content">
+          <div class="tab-pane active" id="tab-habitat"></div>
+          <div class="tab-pane" id="tab-medical"></div>
+          <div class="tab-pane" id="tab-uses"></div>
+          <div class="tab-pane" id="tab-facts"></div>
         </div>
       </div>
 
     </main>
 
-    <footer>
-      <p>Come back tomorrow for a new flower &nbsp;&#10022;</p>
-    </footer>
-
   </div>
-
   <script src="app.js"></script>
 </body>
 </html>
