@@ -1,0 +1,215 @@
+:root {
+  --bg:          #F7F3EC;
+  --card-bg:     #FDFAF5;
+  --text:        #28200F;
+  --text-muted:  #5C5040;
+  --green:       #3A5C30;
+  --gold:        #A67828;
+  --border:      #DDD3BC;
+  --section-bg:  #F2EBE0;
+  --ring-bg:     #EDE4D4;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Lato', sans-serif;
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* ── layout ── */
+.page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 5rem;
+}
+
+/* ── header ── */
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.wordmark {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  color: var(--green);
+}
+
+/* ── nav ── */
+.date-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  gap: 1rem;
+}
+.date-display { text-align: center; }
+.date-label {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  color: var(--text);
+}
+.date-sub {
+  font-size: .75rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: .15rem;
+}
+.nav-btn {
+  background: transparent;
+  border: 1.5px solid var(--border);
+  color: var(--text-muted);
+  padding: .4rem 1.1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: 'Lato', sans-serif;
+  font-size: .85rem;
+  transition: border-color .2s, color .2s;
+  white-space: nowrap;
+}
+.nav-btn:hover { border-color: var(--green); color: var(--green); }
+
+/* ── card ── */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 6px 32px rgba(0,0,0,.07);
+}
+
+/* ── illustration ── */
+.illustration-wrap {
+  background: linear-gradient(160deg, #EDE5D3 0%, #DDD3BC 100%);
+  padding: 3rem 2rem 2.25rem;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+.illustration-ring {
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--ring-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid #C8BAA3;
+  box-shadow:
+    0 0 0 6px rgba(255,255,255,.35),
+    0 12px 40px rgba(0,0,0,.15);
+}
+#flower-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity .5s ease;
+}
+.spinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid #C8BAA3;
+  border-top-color: var(--green);
+  border-radius: 50%;
+  animation: spin .8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.img-credit {
+  margin-top: .85rem;
+  font-size: .7rem;
+  color: #8E7E68;
+  letter-spacing: .04em;
+}
+
+/* ── flower header ── */
+.flower-header {
+  padding: 2rem 2.5rem .5rem;
+  text-align: center;
+}
+.flower-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--text);
+}
+.flower-latin {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--green);
+  margin-top: .4rem;
+}
+.flower-family {
+  font-size: .75rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: .3rem;
+}
+
+/* ── description ── */
+.flower-desc {
+  padding: 1.25rem 2.5rem 1.5rem;
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ── info grid ── */
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--border);
+}
+.info-box {
+  background: var(--card-bg);
+  padding: 1.4rem 1.75rem;
+}
+.info-box--wide {
+  grid-column: 1 / -1;
+  background: var(--section-bg);
+}
+.info-label {
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: .55rem;
+}
+.info-box p {
+  font-size: .9rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* ── footer ── */
+footer {
+  text-align: center;
+  margin-top: 2.5rem;
+  font-size: .82rem;
+  color: var(--text-muted);
+  letter-spacing: .05em;
+}
+
+/* ── responsive ── */
+@media (max-width: 580px) {
+  .flower-name { font-size: 1.9rem; }
+  .flower-header,
+  .flower-desc { padding-left: 1.5rem; padding-right: 1.5rem; }
+  .illustration-ring { width: 230px; height: 230px; }
+  .info-grid { grid-template-columns: 1fr; }
+  .info-box--wide { grid-column: 1; }
+  .info-box { padding: 1.1rem 1.5rem; }
+}

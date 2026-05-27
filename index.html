@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flower a Day</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page">
+
+    <header>
+      <div class="wordmark">Flower a Day</div>
+    </header>
+
+    <nav class="date-nav">
+      <button class="nav-btn" id="btn-prev">&#8249; Previous</button>
+      <div class="date-display">
+        <div class="date-label" id="date-label"></div>
+        <div class="date-sub" id="date-sub"></div>
+      </div>
+      <button class="nav-btn" id="btn-next">Next &#8250;</button>
+    </nav>
+
+    <main class="card" id="card">
+
+      <div class="illustration-wrap">
+        <div class="illustration-ring" id="img-ring">
+          <img id="flower-img" src="" alt="" style="display:none" crossorigin="anonymous">
+          <div class="img-placeholder" id="img-placeholder">
+            <div class="spinner"></div>
+          </div>
+        </div>
+        <p class="img-credit" id="img-credit" style="display:none">Illustration via Wikimedia Commons</p>
+      </div>
+
+      <div class="flower-header">
+        <h2 class="flower-name" id="flower-name"></h2>
+        <p class="flower-latin" id="flower-latin"></p>
+        <p class="flower-family" id="flower-family"></p>
+      </div>
+
+      <p class="flower-desc" id="flower-desc"></p>
+
+      <div class="info-grid">
+        <div class="info-box">
+          <div class="info-label">Origin &amp; Habitat</div>
+          <p id="flower-habitat"></p>
+        </div>
+        <div class="info-box">
+          <div class="info-label">Medicinal Uses</div>
+          <p id="flower-medical"></p>
+        </div>
+        <div class="info-box">
+          <div class="info-label">Culinary &amp; Other Uses</div>
+          <p id="flower-uses"></p>
+        </div>
+        <div class="info-box info-box--wide">
+          <div class="info-label">Did You Know?</div>
+          <p id="flower-facts"></p>
+        </div>
+      </div>
+
+    </main>
+
+    <footer>
+      <p>Come back tomorrow for a new flower &nbsp;&#10022;</p>
+    </footer>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
